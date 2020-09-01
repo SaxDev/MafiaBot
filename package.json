@@ -1,0 +1,25 @@
+{
+  "name": "mafiabot",
+  "version": "1.0.0",
+  "description": "Mafia is a Discord bot game that is inspired by the party game \"Mafia\" game.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaxDev/MafiaBot.git"
+  },
+  "author": "Sax#6211",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SaxDev/MafiaBot/issues"
+  },
+  "homepage": "https://github.com/SaxDev/MafiaBot#readme",
+  "dependencies": {
+    "discord.js": "^12.3.1",
+    "dotenv": "^8.2.0",
+    "hastebin-gen": "^2.0.5",
+    "os-utils": "0.0.14"
+  }
+}
