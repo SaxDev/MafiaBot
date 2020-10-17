@@ -25,13 +25,15 @@ module.exports = {
     let title = msg
     let description = false
     let footer = false
+    let color = true
     if (sliced != -1) {
       let array = msg.split("|")
       title = array[0]
       description = array[1]
       footer = array[2]
+      color = array[3]
     }
-    const color = args[4].join(" ");       
+    const color = args[3].join(" ");       
     const msgEmbed = new Discord.MessageEmbed()
     .setTitle(title)
     .setColor(color)
