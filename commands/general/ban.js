@@ -34,4 +34,5 @@ module.exports = {
     message.channel.send(":x: | Please specify a user to ban!").then(msg => msg.delete(3000));
     }
      
- }
+   }
+};
