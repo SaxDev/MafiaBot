@@ -19,6 +19,7 @@
   "dependencies": {
     "discord.js": "^12.3.1",
     "dotenv": "^8.2.0",
+    "ms": "^2.1.2",
     "hastebin-gen": "^2.0.5",
     "os-utils": "0.0.14"
   }
