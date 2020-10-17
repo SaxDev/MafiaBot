@@ -9,14 +9,14 @@ module.exports = {
   guildOnly: true,
   reqPermissions: ['MANAGE_GUILD'],
   execute(bot, message, args) {
-    if (!args[0]) return message.channel.send(':x: | You have to mention the channel to send the embed..');
-    if (!args[1]) return message.channel.send(':x: | You have to provide a title for the embed.');
+    if (!args[0]) return message.channel.send({embed: {description:'You have to mention the channel to send the embed..', color: '#f83e42'}});
+    if (!args[1]) return message.channel.send({embed: {description:'You have to provide a title for the embed!', color: '#f83e42'}});
 
     let channel = false
     if (message.mentions.channels.first()) {
       channel = message.mentions.channels.first().id;
     } else {
-      if (!message.guild.channels.cache.get(args[0])) return message.channel.send(':x: | This channel does not exist.');
+      if (!message.guild.channels.cache.get(args[0])) return message.channel.send({embed: {description:'The channel provided does not exist!', color: '#f83e42'}});
       channel = args[0]
     }
     args.shift()
@@ -40,7 +40,7 @@ module.exports = {
     if (description) msgEmbed.setDescription(description)
     if (footer) msgEmbed.setFooter(footer)
     bot.channels.cache.get(channel).send(msgEmbed).then(() => {
-      message.channel.send('Embed has been sent: ', {embed: msgEmbed}).then(msg => msg.delete({timeout: 5000}))
+      message.channel.send({embed: {description:'Embed has been sent', color: '#42f12c'}}, {embed: msgEmbed}).then(msg => msg.delete({timeout: 5000}))
     }).catch(err => {
       console.log(err)
     })
