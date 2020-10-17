@@ -5,7 +5,7 @@ module.exports = {
   category: "General",
   description: "Direct messages a member with a fancy embed.",
   aliases: ["dm"],
-  usage: "[member id/mention] [title] | [description]",
+  usage: "[member id/mention] [title] | [description] | [color]",
   cooldown: 5,
   guildOnly: true,
   reqPermissions: ['MANAGE_GUILD'],
