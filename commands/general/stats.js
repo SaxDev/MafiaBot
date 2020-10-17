@@ -32,7 +32,7 @@ module.exports = {
         .addField("Resource Usage", `\`\`\`RAM Usage: ${Math.round(memUsage * 100) / 100}/${Math.round(os.totalmem())} MB
 Avg. CPU Usage: ${v}%\`\`\``)
         .addField("Uptime", `${days} days, ${hours} hours, ${mins} minutes, and ${realTotalSecs} seconds`)
-        .setFooter("Created by: Sax#6211")
+        .setFooter("Made by Sax#6211 and noodle#0002 with <3")
         .setTimestamp();
       msg.edit("", {embed: embed});
     })
