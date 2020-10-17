@@ -13,7 +13,7 @@ module.exports = {
 
     const user = message.mentions.users.first()     
     const prefix = process.env.PREFIX
-    var reason = message.content.replace(prefix + "kick", "");
+    var reason = message.content.replace(`Kick via command (${message.author.user.tag}` + ""));
     
     if(user) {
     const member = message.guild.member(user) 
