@@ -21,12 +21,12 @@ module.exports = {
     }
     args.shift()
     const msg = args.join(' ')
-    const color = args.join('#')
+    const color1 = args.join('#')
     const sliced = msg.indexOf('|')
     let title = msg
     let description = false
     let footer = false
-    let color = color
+    let color = color1
     if (sliced != -1) {
       let array = msg.split("|")
       title = array[0]
