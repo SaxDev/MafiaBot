@@ -2,13 +2,10 @@ module.exports = async (client) => {
 
   //Client User activity
   client.user.setStatus("online");
-  client.user.setActivity("the Mafia whispers...", { type: "LISTENING" });
+  client.user.setActivity("ModMail Thread!", { type: "WATCHING" });
 
   //Client info
-  console.log(`Discord - Bot is ready.
-  Client User: ${client.user.tag}
-  Guild Count: ${client.guilds.cache.size}
-  User Count: ${client.users.cache.size}`);
+  console.log('I have logged in and I am functioning.. I think');
 
   client.ready = true;
 };
