@@ -26,6 +26,5 @@ module.exports = {
 
     message.channel.bulkDelete(deleteAmmount, true)
     .then(deleted => message.channel.send(`✅ I deleted \`${deleted.size}\` message(s)`)).then(msg => msg.delete(5000))
-    .catch(err => message.channel.send(':x: | There was a error in the process!')).then(msg => msg.delete(5000))
     }
 };
