@@ -25,6 +25,6 @@ module.exports = {
     }
 
     message.channel.bulkDelete(deleteAmmount, true)
-    .then(deleted => message.channel.send(`✅ I deleted \`${deleted.size}\` message(s)`)).then(msg => msg.delete(5000))
+    .then(deleted => message.channel.send(`${message.author}, I have deleted \`${deleted.size}\` messages.`)).then(msg => msg.delete(5000))
     }
 };
