@@ -10,33 +10,26 @@ module.exports = {
   guildOnly: true,
   reqPermissions: ['BAN_MEMBERS'],
   execute(bot, message, args) {
-  
-      if (!message.member.hasPermission("BAN_MEMBERS"))
-    return message.channel.send(':x: | You do not have the required permissions to use this command.').then(msg => msg.delete(5000))
-  
-    if (!message.guild.me.hasPermission(["BAN_MEMBERS"])) return message.channel.send(":x: | I do not have the required permissions!").then(msg => msg.delete(5000))
-  
-    const user = message.mentions.users.first() 
+
+    const user = message.mentions.users.first()     
+    const prefix = process.env.PREFIX
+    var reason = message.content.replace(prefix + "kick", "");
     
     if(user) {
     const member = message.guild.member(user) 
-    
-    args.shift();
-    const reason = args.join(" ");
-    if (reason.length < 1) return message.channel.send(":x: | You didn't provide a reason.");
 
     if(member){
-    member.ban(reason).then(() =>{
-    message.channel.send(`:tools: **${member.user.tag}** has been **BANNED**!`) 
-    member.send(`:x: | You were **banned** from **${message.guild}** for:` + reason)
+    member.kick(reason).then(() =>{
+    message.channel.send(`:tools: **${member.user.tag}** has been **KICKED**`) 
+    member.send(`❌ You were **kick** from **${message.guild}** for:` + reason)
     }).catch(err =>{
-    message.channel.send(`:x: | I was unable to ban ${user.tag}`).then(msg => msg.delete(3000));
+    message.channel.send(`❌ I was unable to kick ${user.tag}`).then(msg => msg.delete(3000));
     console.log(err);
     })
     }
-    }else {
-    message.channel.send(":x: | Please specify a user to ban!").then(msg => msg.delete(3000));
+    } else {
+    message.channel.send("❌ Please specify a user to kick!").then(msg => msg.delete(3000));
     }
      
-   }
-};
+  }
+];
