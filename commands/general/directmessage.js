@@ -10,14 +10,14 @@ module.exports = {
   guildOnly: true,
   reqPermissions: ['MANAGE_GUILD'],
   execute(bot, message, args) {
-    if (!args[0]) return message.channel.send(':x: | You have to mention or provide a id to direct message a user.');
-    if (!args[1]) return message.channel.send(':x: | You have to provide a title for the embed.');
+    if (!args[0]) return message.channel.send({embed: {description:'You have to mention or provide a id to direct message a user.', color: '#f83e42'}});
+    if (!args[1]) return message.channel.send({embed: {description:'You have to provide a title for the embed.', color: '#f83e42'}});
     
     let member = false
     if (message.mentions.users.first()) {
       member = message.mentions.users.first().id;
     } else {
-      if (!message.guild.members.cache.get(args[0])) return message.channel.send(':x: | This member does not exist.');
+      if (!message.guild.members.cache.get(args[0])) return message.channel.send({embed: {description:'This member does not exist.', color: '#f83e42'}});
       member = args[0]
     }
     
@@ -43,9 +43,9 @@ module.exports = {
     if (description) dmEmbed.setDescription(description)
     if (footer) dmEmbed.setFooter(footer)
     bot.users.cache.get(member).send(dmEmbed).then(() => {
-      message.channel.send('The embed has been sent:', {embed: dmEmbed})
+      message.channel.send({embed: {description:'The embed has been sent:', color: '#42f12c'}}, {embed: dmEmbed})
     }).catch(err => {
-      message.channel.send('Couldnt dm the user, they probably have their dms closed.')
+      message.channel.send({embed: {description:'Couldnt dm the user, they probably have their dms closed.', color: '#f83e42'}})
     })
   }
 };
