@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports = {
   name: "sendembed",
-  category: "Utility",
+  category: "General",
   description: "Sends a message with a fancy embed.",
   usage: "[channel] | [title] | [description] | [color]",
   cooldown: 5,
