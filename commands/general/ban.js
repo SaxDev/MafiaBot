@@ -20,6 +20,10 @@ module.exports = {
     
     if(user) {
     const member = message.guild.member(user) 
+    
+    args.shift();
+    const reason = args.join(" ");
+    if (reason.length < 1) return message.channel.send(":x: | You didn't provide a reason.");
 
     if(member){
     member.ban(reason).then(() =>{
