@@ -54,7 +54,7 @@ module.exports = {
     } else {
 
       let command = bot.commands.get(args[0].toLowerCase())
-      if (!command) return message.channel.send({embed: {description:`There's no such a command like that, to see the full command list please use \`${message.prefix}commands\` command.`, color: '#f83e42'}});
+      if (!command) return message.channel.send({embed: {description:`There's no such a command like that, to see the full command list please use the \`${message.prefix}commands\` command.`, color: '#f83e42'}});
 
       let perms = []
       if (command.reqPermissions) {
