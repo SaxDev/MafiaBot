@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports = {
   name: "say",
-  category: "Utility",
+  category: "General",
   description: "Make the bot say your favourite quotes.",
   usage: "[channel(optional)] [quote]",
   cooldown: 5,
