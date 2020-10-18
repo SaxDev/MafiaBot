@@ -26,15 +26,15 @@ module.exports = (client, message) => {
   if (!command) return;
 
   //Parameters
-  if (command.dev && !devs.includes(message.author.id)) return message.channel.send({embed: {title: "Error :caution", description:"Only my Developers can use this command!", color: '#f83e42'}});
-  if (command.guildOnly && message.channel.type == "dm") return message.channel.send({embed: {title: "Error :cauton:", description:"This command can only be executed in a server!", color: '#f83e42'}});
-  if (command.dmOnly && message.channel.type != "dm") return message.channel.send({embed: {title: "Error :caution:", description:"This command can only be executed in DM's!", color: '#f83e42'}});
+  if (command.dev && !devs.includes(message.author.id)) return message.channel.send({embed: {title: "Error ⚠️", description:"Only my Developers can use this command!", color: '#f83e42'}});
+  if (command.guildOnly && message.channel.type == "dm") return message.channel.send({embed: {title: "Error ⚠️", description:"This command can only be executed in a server!", color: '#f83e42'}});
+  if (command.dmOnly && message.channel.type != "dm") return message.channel.send({embed: {title: "Error ⚠️", description:"This command can only be executed in DM's!", color: '#f83e42'}});
   if (command.reqPermissions) {
     let missing = [];
     command.reqPermissions.forEach(permission => {
       if (!message.guild.members.cache.get(message.author.id).permissions.has(permission)) missing.push(prettyString(permission))
     })
-    if (missing.length > 0) return message.channel.send({embed: {title: "Error :caution:", description:"You don't have the required permission(s) to use this command!! Missing permission(s): " + missing.join(', '), color: '#f83e42'}});
+    if (missing.length > 0) return message.channel.send({embed: {title: "Error ⚠️", description:"You don't have the required permission(s) to use this command!! Missing permission(s): " + missing.join(', '), color: '#f83e42'}});
   }
 
   if (!cooldowns.has(command.name)) {
@@ -52,7 +52,7 @@ module.exports = (client, message) => {
     const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
     if (now < expirationTime && !devs.includes(message.author.id)) {
       const timeLeft = (expirationTime - now) / 1000;
-      return message.reply({embed: {title: "Error :caution:", description:`You need to wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.name}\` command.`, color: '#f83e42'}});
+      return message.reply({embed: {title: "Error ⚠️", description:`You need to wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.name}\` command.`, color: '#f83e42'}});
     }
     timestamps.set(message.author.id, now);
     setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
@@ -62,6 +62,6 @@ module.exports = (client, message) => {
     command.execute(client, message, args);
   } catch (err) {
     console.error(`Executing command error: ${err}`);
-    message.channel.send({embed: {title: "Error :caution:", description:`Executing command error: ${err}`, color: '#f83e42'}});
+    message.channel.send({embed: {title: "Error ⚠️", description:`Executing command error: ${err}`, color: '#f83e42'}});
   }
 }
