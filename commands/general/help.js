@@ -26,11 +26,6 @@ module.exports = {
       .setFooter("Requested by " + message.author.username, message.author.avatarURL())
       .setColor("BLUE");
      
-        const categoryName = category.charAt(0).toUpperCase() + category.slice(1);
-
-        helpEmbed.addField(categoryName, helpList.join(", "));
-      );
-
       if (misc.length < 0) {
         let miscList = []
         misc.forEach(c => {
