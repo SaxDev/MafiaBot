@@ -27,7 +27,7 @@ module.exports = {
       .setColor("BLUE");
 
       categories.forEach(category => {
-        if (category === "dev") return;
+        if (category === dev) return;
 
         let helpList = [];
         const commands = fs.readdirSync(`./commands/${category}`).filter(file => file.endsWith('.js'));
