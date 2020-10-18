@@ -2,7 +2,7 @@ const fs = require('fs');
 
 module.exports = {
   name: "reload",
-  category: "dev",
+  category: "Dev",
   description: "Reloads a command.",
   usage: "<command name>",
   example: `!reload help`,
