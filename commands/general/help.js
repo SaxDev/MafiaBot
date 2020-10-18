@@ -34,7 +34,7 @@ module.exports = {
 
         commands.forEach(command => {
           command = command.slice(0, command.length-3)
-          if (!bot.commands.get(command).dev && !bot.commands.get(command).unstaged) helpList.push(`\`${command}\``);
+          if (!bot.commands.get(command).devs && !bot.commands.get(command).unstaged) helpList.push(`\`${command}\``);
         });
 
         const categoryName = category.charAt(0).toUpperCase() + category.slice(1);
@@ -45,7 +45,7 @@ module.exports = {
       if (misc.length < 0) {
         let miscList = []
         misc.forEach(c => {
-          if (!bot.commands.get(command).dev && !bot.commands.get(command).unstaged) miscList.push(`\`${command}\``)
+          if (!bot.commands.get(command).devs && !bot.commands.get(command).unstaged) miscList.push(`\`${command}\``)
         })
         helpEmbed.push("Misc.", miscList.join(", "))
       }
@@ -74,7 +74,7 @@ module.exports = {
       if (command.reqPermissions) helpEmbed.addField("**Required Permission(s)**", perms);
       if (command.guildOnly) helpEmbed.addField("**Guild Only**", "Command only can be executed in a server.");
       if (command.dmOnly) helpEmbed.addField("**DM Only**", "Command only can be executed in DMs.");
-      if (command.dev) helpEmbed.addField("**Dev**", "Only Bot Developers can execute this command.");
+      if (command.devs) helpEmbed.addField("**Dev**", "Only Bot Developers can execute this command.");
       if (command.voted) helpEmbed.addField("**Voted**", "You have to vote for the bot to use this command.")
       if (command.cooldown) helpEmbed.addField("**Cooldown**", command.cooldown + " second(s)");
       message.channel.send(helpEmbed)
