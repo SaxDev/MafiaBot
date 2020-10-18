@@ -5,12 +5,12 @@ module.exports = {
   category: "dev",
   description: "Reloads a command.",
   usage: "<command name>",
-  example: `>reload help`,
+  example: `!reload help`,
   dev: true,
   execute(bot, message, args) {
-    if (!args[0]) return message.channel.send(`<:cross:724049024943915209> | Missing arguments. \n-Usage: \`${message.prefix}${this.name} ${this.usage}\``);
+    if (!args[0]) return message.channel.send({embed: {title: "Error ⚠️", description:`Missing arguments. \n-Usage: \`${message.prefix}${this.name} ${this.usage}\``, color: '#f83e42'}});
     let commandName = args[0].toLowerCase()
-    if (!bot.commands.get(commandName)) return message.channel.send("<:cross:724049024943915209> | This command does not exist.");
+    if (!bot.commands.get(commandName)) return message.channel.send({embed: {title: "Error ⚠️", description:"This command does not exist.", color: '#f83e42'}});
     let category = bot.commands.get(commandName).category.toLowerCase()
 
     try {
@@ -20,9 +20,9 @@ module.exports = {
       !pull.category ? pull.category = category : null
       bot.commands.set(commandName, pull);
     } catch(err) {
-      return message.channel.send("<:cross:724049024943915209> | Could not reload the command: " + err);
+      return message.channel.send({embed: {title: "Error ⚠️", description:"Could not reload the command: " + err, color: '#f83e42'}});
     }
 
-    message.channel.send("<:tick:724048990626381925> | Command has been reloaded successfully.");
+    message.channel.send({embed: {title: "Error ⚠️", description:"Command has been reloaded successfully.", color: '#42f12c'}});
   }
 };
