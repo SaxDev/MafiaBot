@@ -1,5 +1,6 @@
 {
   "prefixes": ["!"],
   "version": "1.0.6",
-  "devs": ["194666207440273408"]
+  "devs": ["194666207440273408"],
+  "mongoPass": "mongodb://Pm277353:Pm277353@cluster0-shard-00-00.fwqk7.mongodb.net:27017,cluster0-shard-00-01.fwqk7.mongodb.net:27017,cluster0-shard-00-02.fwqk7.mongodb.net:27017/<dbname>?ssl=true&replicaSet=atlas-5hhyyt-shard-0&authSource=admin&retryWrites=true&w=majority"
 }
