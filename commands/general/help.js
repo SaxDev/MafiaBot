@@ -16,7 +16,7 @@ module.exports = {
   execute(bot, message, args) {
     const categories = fs.readdirSync('./commands').filter(file => !file.endsWith('.js'));
     const misc = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-    const dev = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+    const dev = fs.readdirSync('./commands/dev').filter(file => file.endsWith('.js'));
     if (!args[0]) {
 
       let helpEmbed = new Discord.MessageEmbed()
