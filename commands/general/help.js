@@ -26,21 +26,10 @@ module.exports = {
       .setFooter("Requested by " + message.author.username, message.author.avatarURL())
       .setColor("BLUE");
      
-      categories.forEach(category => {
-        if (category === dev) return;
-
-        let helpList = [];
-        const commands = fs.readdirSync(`./commands/${category}`).filter(file => file.endsWith('.js'));
-
-        commands.forEach(command => {
-          command = command.slice(0, command.length-3)
-          if (!bot.commands.get(command).dev && !bot.commands.get(command).unstaged) helpList.push(`\`${command}\``);
-        });
-
         const categoryName = category.charAt(0).toUpperCase() + category.slice(1);
 
         helpEmbed.addField(categoryName, helpList.join(", "));
-      });
+      );
 
       if (misc.length < 0) {
         let miscList = []
