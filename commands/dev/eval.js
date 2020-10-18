@@ -7,7 +7,7 @@ const Discord = require('discord.js');
 
 module.exports = {
   name: 'eval',
-  category: 'dev',
+  category: 'Dev',
   description: 'Executes a command.',
   aliases: ['eveal', 'execute'],
   usage: '<code>',
