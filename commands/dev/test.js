@@ -7,7 +7,7 @@ const Discord = require("discord.js");
 
 module.exports = {
   name: "test",
-  category: "dev",
+  category: "Dev",
   description: "Test",
   aliases: ["tests"],
   usage: "<test> [test]",
