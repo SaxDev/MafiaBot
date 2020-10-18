@@ -4,7 +4,7 @@ const hastebin = require("hastebin-gen");
 
 module.exports = {
   name: "haste-bin",
-  category: "dev",
+  category: "Dev",
   description: "Uploads stuff to Hastebin. DEV ONLY.",
   aliases: ["up","haste"],
   usage: "[text]",
