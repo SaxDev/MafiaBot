@@ -17,6 +17,6 @@ client.ready = false;
   require(`./handlers/${handler}`)(client);
 });
 
-    await db.connect("mongodb://Pm277353:Pm277353@cluster0-shard-00-00.fwqk7.mongodb.net:27017,cluster0-shard-00-01.fwqk7.mongodb.net:27017,cluster0-shard-00-02.fwqk7.mongodb.net:27017/ModMail-Assistant?ssl=true&replicaSet=atlas-5hhyyt-shard-0&authSource=admin&retryWrites=true&w=majority"
+db.connect("mongodb://Pm277353:Pm277353@cluster0-shard-00-00.fwqk7.mongodb.net:27017,cluster0-shard-00-01.fwqk7.mongodb.net:27017,cluster0-shard-00-02.fwqk7.mongodb.net:27017/ModMail-Assistant?ssl=true&replicaSet=atlas-5hhyyt-shard-0&authSource=admin&retryWrites=true&w=majority"
           .then(console.log("Database active"))
 client.login(process.env.BOT_TOKEN);
