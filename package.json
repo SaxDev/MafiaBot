@@ -21,6 +21,6 @@
     "dotenv": "^8.2.0",
     "hastebin-gen": "^2.0.5",
     "os-utils": "0.0.14",
-    "moment": "^2.24.0",
+    "moment": "^2.24.0"
   }
 }
