@@ -30,7 +30,7 @@ const prefix = "<@536542160703586324>";
    if (!message.content.startsWith(prefix)) return;
 const commandfile = client.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)));
      commandfile.run(client, message, args);
-    }
+    };
 client.commands = new Collection();
 client.events = new Collection();
 client.ready = false;
