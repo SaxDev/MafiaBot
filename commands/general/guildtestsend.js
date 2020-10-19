@@ -9,7 +9,7 @@ module.exports = {
   reqPermissions: ['ADMINISTRATOR'],
   execute(bot, message, args) {
   
-        var guildList = client.guilds.array();
+        var guildList = bot.guilds.array();
         try {
             guildList.forEach(guild => guild.defaultChannel.send("pp"));
         } catch (err) {
