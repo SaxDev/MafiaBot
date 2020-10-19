@@ -4,7 +4,6 @@ module.exports = {
   category: "General",
   description: "Set a poll for everyone to vote on something!",
   aliases: ["vote"],
-  usage: "[suggestion]",
   cooldown: 5,
   execute(bot, message, args) {
 
