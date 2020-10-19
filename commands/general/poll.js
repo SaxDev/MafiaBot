@@ -13,7 +13,7 @@ module.exports = {
     if(!question) return message.channel.send('Please provide a question!').then(msg => msg.delete(5000));
       
     const poll = new Discord.MessageEmbed() 
-    .setColor('#7739C4')
+    .setColor('RANDOM')
     .setAuthor(message.author.tag, message.author.avatarURL())
     .setDescription(question)
     .setFooter('React to vote!')
