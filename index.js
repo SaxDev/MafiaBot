@@ -7,10 +7,11 @@ const client = new Client({
 });
 
 mongoose.connect('mongodb+srv://Pm277353:Pm277353@cluster0.fwqk7.mongodb.net/test/Data', { newNewUrlParser: true, useUnifiedTopology: true});
-const data = await prefix.findOne({
-      GuildID: message.guild.id
 });
 
+const data = await prefix.findOne({
+      GuildID: message.guild.id
+  });
 const messageArray = message.context.split(' ');
 const cmd = messageArray[0];
 const args = messageArray.slice(1);
