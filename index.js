@@ -8,6 +8,9 @@ const client = new Client({
 
 mongoose.connect('mongodb+srv://Pm277353:Pm277353@cluster0.fwqk7.mongodb.net/test/Data', { newNewUrlParser: true, useUnifiedTopology: true});
 
+bot.on('message', async (message) => {
+    if (message.author.bot) return;
+      
 const data = await prefix.findOne({
       GuildID: message.guild.id
   });
