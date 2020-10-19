@@ -25,7 +25,9 @@ module.exports = {
         color: "RANDOM",
         footer: {
           text: `Requested by: ${message.author.tag}`,
+      bot.users.fetch(theUsersID).then(myUser => {
           icon: message.author.displayAvatarURL({dynamic:true})
+          });
         }
       }
     })
