@@ -13,21 +13,19 @@ module.exports = {
       user = message.author
     } else {
       user = message.mentions.users.first()
-      if (!user) return message.channel.send({embed: {title: "Error ⚠️", description:"You didn't provide a true user.", color: '#f83e42'}})
+      if (!user) return message.channel.send(":x: | You didn't provide a true user.")
     }
 
     message.channel.send({
       embed: {
         description: `Here is **${user.tag}**'s avatar:`,
         image: {
-          url: user.displayAvatarURL({format:"png",dynamic:true,size:1024})
+          url: user.avatarURL({format:"png",dynamic:true,size:1024})
         },
-        color: "RANDOM",
+        color: "RED",
         footer: {
           text: `Requested by: ${message.author.tag}`,
-      bot.users.fetch(theUsersID).then(myUser => {
-          icon: message.author.displayAvatarURL({dynamic:true})
-          });
+          icon: message.author.avatarURL({dynamic:true})
         }
       }
     })
