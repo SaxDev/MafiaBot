@@ -7,7 +7,7 @@ module.exports = {
   cooldown: 5,
   execute(bot, message, args) {
 
-    const question = message.content.replace(prefix + 'poll', "");
+  const question = args.join(" ");
     message.delete().catch(O_o=>{});  
       
     if(!question) return message.channel.send('Please provide a question!').then(msg => msg.delete(5000));
