@@ -12,9 +12,9 @@ module.exports = {
   reqPermissions: ['BAN_MEMBERS'],
   execute(bot, message, args) {
     let userID = args[0]
-    message.guild.fetchBans()
-     .then(bans => {
-    if (bans.some(u => User.includes(u.username))) {
+      message.guild.fetchBans()
+       .then(bans => {
+    if (bans.some(u => userID.includes(u.username)));
     let bUser = bans.find(user => user.username === userID);
     let reason = args.slice(1).join(' ');
     let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || bans.find(b => b.user.id == userID)    
@@ -25,11 +25,10 @@ module.exports = {
     
     if(!bUser) return message.channel.send({embed: {title: "Error⚠️", description: "Please provide a user to unban.", color: '#f5ce42'}});
     if(!member) return message.channel.send({embed: {title: "Error⚠️", description: "Please provide a user to unban.", color: '#f5ce42'}});                
-      message.guild.members.unban(bUser.user({reason: reason}))
+      message.guild.members.unban(bUser.user({reason: reason}));
+      message.guild.members.unban(bUser.user.id({reason: reason)))
         .catch(error => message.channel.send({embed: {title: "Error⚠️", description: 'I could not seem to unban that user.', color:'#f83e42'}}));
-      message.channel.send({embed: {title: "Success!", description: `I have successfully unbanned ${member.users.tag} for: ${reason}`, color: '#42f12c'}});
+      message.channel.send({embed: {title: "Success!", description: `I have successfully unbanned ${member.users.tag} for: ${reason}`, color: '#42f12c'}});  
     }
-   }
-           
   }
 };
