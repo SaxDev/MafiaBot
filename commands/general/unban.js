@@ -20,7 +20,7 @@ module.exports = {
     let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || bans.find(b => b.user.id == userID)        
     if(!reason) reason = "No reason provided.";
     
-    if(!bUser) return message.channel.send({embed: {title: "Error⚠️", description: "Please provide a user to unban.", color: '#f5ce42'}});             
+    if(!userID) return message.channel.send({embed: {title: "Error⚠️", description: "Please provide a user to unban.", color: '#f5ce42'}});             
       message.guild.members.unban(bUser.user({reason: reason}));
       message.guild.members.unban(bUser.user.id({reason: reason}));
       message.channel.send({embed: {title: "Success!", description: `I have successfully unbanned ${member.users.tag} for: ${reason}`, color: '#42f12c'}});  
