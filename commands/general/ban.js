@@ -15,7 +15,7 @@ module.exports = {
         if(!member)
             return message.channel.send({embed: {title: "Error⚠️", description:"Please mention a valid member of this server", color:'#f83e42'}});
         if(!member.bannable) 
-            return message.channel.send({embed: {title: "Error⚠️", description:"I cannot ban this user! Do they have a higher role? Do I have ban permissions?");
+            return message.channel.send({embed: {title: "Error⚠️", description:"I cannot ban this user! Do they have a higher role?", color:'#f83e42'}});
 
         let reason = args.slice(1).join(' ');
         if(!reason) reason = "No reason provided.";
