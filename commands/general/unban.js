@@ -11,6 +11,7 @@ module.exports = {
   guildOnly: true,
   reqPermissions: ['BAN_MEMBERS'],
   execute(bot, message, args) {
+      let unbanned = message.mentions.users.first() || client.users.resolve(args[0]);
       let member = bot.users.fetch(unbanned);
       let ban = message.guild.fetchBans();
       
