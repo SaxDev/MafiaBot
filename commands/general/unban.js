@@ -19,8 +19,11 @@ module.exports = {
       if(bans.size == 0) return message.channel.send({embed: {title: "Error⚠️", description: "No users are banned in this guild!", color: '#f5ce42'}});      
       let bUser = bans.find(b => b.user.id == userID)
       if(!bUser) return message.channel.send({embed: {title: "Error⚠️", description: "Please provide a user to unban.", color: '#f5ce42'}});
-      message.guild.members.unban(bUser.user)
-      message.channel.send({embed: {title: "Success!", description: `I have successfully unbanned ${member.user.tag} for: ${reason}`, color: '#42f12c'}});
+      message.guild.members.unban(bUser.user({reason: reason}))
+            .catch(error => message.channel.send({embed: {title: "Error⚠️", description: 'I could not seem to unban that user.', color:'#f83e42'}}));
+      message.channel.send({embed: {title: "Success!", description: `I have successfully unbanned ${member.users.tag} for: ${reason}`, color: '#42f12c'}});
+      if(member.bUser)
+         return message.channel.send({embed: {title: "Success!", description:`A user has been un-banned by ${message.author.tag} for: ${reason}`, color:'#42f12c'}});
 })
   }
 };
