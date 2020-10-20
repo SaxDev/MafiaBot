@@ -6,7 +6,7 @@ module.exports = {
   category: "General",
   description: "Sends a message with a fancy embed.",
   usage: "[user]",
-  aliases: "un-ban","pardon","unbean","un-bean",
+  aliases: ["un-ban","pardon","unbean","un-bean"],
   cooldown: 5,
   guildOnly: true,
   reqPermissions: ['BAN_MEMBERS'],
