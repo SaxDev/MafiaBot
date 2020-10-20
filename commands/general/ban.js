@@ -21,7 +21,7 @@ module.exports = {
         if(!reason) reason = "No reason provided.";
 
         member.ban({reason: reason})
-            .catch(error => message.channel.send({embed: {title: "Error⚠️", description: 'I could not seem to ban that user.', color:'#f83e42'}});
+            .catch(error => message.channel.send({embed: {title: "Error⚠️", description: 'I could not seem to ban that user.', color:'#f83e42'}}));
         message.channel.send({embed: {title: "Success!", description:`${member.user.tag} has been banned by ${message.author.tag} for: ${reason}`, color:'#42f12c'}});
     }
   }
