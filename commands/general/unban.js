@@ -34,7 +34,6 @@ module.exports = {
       return;
     }
 
-    var user = ban.get(member.id);
     message.guild.members.unban(member);
     let successfullyembed = new Discord.MessageEmbed()
       .setTitle("Success!")
