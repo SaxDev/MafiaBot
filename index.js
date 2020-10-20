@@ -15,9 +15,9 @@ const client = new Client({
 //const data = await prefix.findOne({
 //      GuildID: message.guild.id
 //  });
-const messageArray = message.context.split(' ');
-const cmd = messageArray[0];
-const args = messageArray.slice(1);
+//const messageArray = message.context.split(' ');
+//const cmd = messageArray[0];
+//const args = messageArray.slice(1);
 
 //    if(data) {
 //const prefix = data.Prefix;
