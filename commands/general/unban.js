@@ -15,7 +15,7 @@ module.exports = {
       let member = bot.users.fetch(unbanned);
       let ban = message.guild.fetchBans();
       
-    if (!ban.get(member.id)) {
+    if (!ban(member.id)) {
       let notbannedembed = new Discord.MessageEmbed()
         .setTitle("Error⚠️")
         .setDescription("This user is not banned.")
