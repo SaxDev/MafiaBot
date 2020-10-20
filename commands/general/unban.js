@@ -20,9 +20,6 @@ module.exports = {
     
     if(!reason) reason = "No reason provided.";
     
-      message.guild.fetchBans().then(bans=> {
-    if(bans.size == 0) return message.channel.send({embed: {title: "Error⚠️", description: "No users are banned in this guild!", color: '#f5ce42'}});      
-        
     if(!bUser) return message.channel.send({embed: {title: "Error⚠️", description: "Please provide a user to unban.", color: '#f5ce42'}});
     if(!member) return message.channel.send({embed: {title: "Error⚠️", description: "Please provide a user to unban.", color: '#f5ce42'}});                
       message.guild.members.unban(bUser.user({reason: reason}))
