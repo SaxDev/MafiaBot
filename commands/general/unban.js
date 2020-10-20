@@ -21,8 +21,8 @@ module.exports = {
     if(!reason) reason = "No reason provided.";
     
     if(!userID) return message.channel.send({embed: {title: "Error⚠️", description: "Please provide a user to unban.", color: '#f5ce42'}});             
-      message.guild.members.unban(bUser.user({reason: reason}));
-      message.guild.members.unban(bUser.user.id({reason: reason}));
+      message.guild.members.unban(bUser.member({reason: reason}));
+      message.guild.members.unban(bUser.member.id({reason: reason}));
       message.channel.send({embed: {title: "Success!", description: `I have successfully unbanned ${member.users.tag} for: ${reason}`, color: '#42f12c'}});  
     });
   }
