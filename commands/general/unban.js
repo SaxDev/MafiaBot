@@ -28,6 +28,6 @@ module.exports = {
       message.guild.members.unban(bUser.user({reason: reason}));
       message.guild.members.unban(bUser.user.id({reason: reason}));
       message.channel.send({embed: {title: "Success!", description: `I have successfully unbanned ${member.users.tag} for: ${reason}`, color: '#42f12c'}});  
-    }
+    });
   }
 };
