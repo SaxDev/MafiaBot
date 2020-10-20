@@ -11,8 +11,8 @@ module.exports = {
   guildOnly: true,
   reqPermissions: ['BAN_MEMBERS'],
   execute(bot, message, args) {
-      let member = await client.users.fetch(unbanned);
-      let ban = await message.guild.fetchBans();
+      let member = client.users.fetch(unbanned);
+      let ban = message.guild.fetchBans();
       
     if (!ban.get(member.id)) {
       let notbannedembed = new Discord.MessageEmbed()
