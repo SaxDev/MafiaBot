@@ -29,5 +29,7 @@ module.exports = {
         .catch(error => message.channel.send({embed: {title: "Error⚠️", description: 'I could not seem to unban that user.', color:'#f83e42'}}));
       message.channel.send({embed: {title: "Success!", description: `I have successfully unbanned ${member.users.tag} for: ${reason}`, color: '#42f12c'}});
     }
+   }
+           
   }
 };
