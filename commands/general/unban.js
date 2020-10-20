@@ -11,35 +11,14 @@ module.exports = {
   guildOnly: true,
   reqPermissions: ['BAN_MEMBERS'],
   execute(bot, message, args) {
-      let unbanned = message.mentions.users.first() || bot.users.resolve(args[0]);
-      let member = bot.users.fetch(unbanned);
-      let ban = message.guild.fetchBans();
-      
-    if (!ban(member.id)) {
-      let notbannedembed = new Discord.MessageEmbed()
-        .setTitle("Error⚠️")
-        .setDescription("This user is not banned.")
-        .setColor("#f83e42");
-      message.channel.send(notbannedembed);
 
-      return;
-    }
-
-    if (!message.guild.bot.permissions.has("BAN_MEMBERS")) {
-      let botnoperms = new Discord.MessageEmbed()
-         .setTitle("Error⚠️")
-        .setDescription("I do not have permissions, please contact an administrator.")
-      message.channel.send(botnoperms);
-
-      return;
-    }
-
-    message.guild.members.unban(member);
-    let successfullyembed = new Discord.MessageEmbed()
-      .setTitle("Success!")
-      .setDescription(`${member.tag} has been successfully unbanned.`)
-      .setColor("#42f12c");
-
-    message.channel.send(successfullyembed);    
+      let userID = args[0]
+      message.guild.fetchBans().then(bans=> {
+      if(bans.size == 0) return message.channel.send({embed: {title: "Error⚠️", description: "No users are banned in this guild!", color: '#f5ce42'}});      
+      let bUser = bans.find(b => b.user.id == userID)
+      if(!bUser) return message.channel.send({embed: {title: "Error⚠️", description: "Please provide a user to unban.", color: '#f5ce42'}});
+      message.guild.members.unban(bUser.user)
+      message.channel.send({embed: {title: "Success!", description: 'I have successfully unbanned' + bUser.user, color: '#42f12c'}});
+})
   }
 };
