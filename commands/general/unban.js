@@ -11,10 +11,13 @@ module.exports = {
   guildOnly: true,
   reqPermissions: ['BAN_MEMBERS'],
   execute(bot, message, args) {
-    let reason = args.slice(1).join(' ');
     let userID = args[0]
-    let bUser = bans.find(b => b.user.id == userID)
-    let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || bans.find(b => b.user.id == userID)
+    message.guild.fetchBans()
+     .then(bans => {
+    if (bans.some(u => User.includes(u.username))) {
+    let bUser = bans.find(user => user.username === userID);
+    let reason = args.slice(1).join(' ');
+    let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || bans.find(b => b.user.id == userID)    
     if(!member)
         return message.channel.send({embed: {title: "Error⚠️", description:"Please mention a valid member of this server", color:'#f83e42'}});
     
@@ -25,5 +28,6 @@ module.exports = {
       message.guild.members.unban(bUser.user({reason: reason}))
         .catch(error => message.channel.send({embed: {title: "Error⚠️", description: 'I could not seem to unban that user.', color:'#f83e42'}}));
       message.channel.send({embed: {title: "Success!", description: `I have successfully unbanned ${member.users.tag} for: ${reason}`, color: '#42f12c'}});
+    }
   }
 };
