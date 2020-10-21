@@ -11,7 +11,7 @@ module.exports = {
   reqPermissions: ['BAN_MEMBERS'],
   execute(bot, message, args) {
     let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
-    let logchannel = bot.channels.cache.get('563402253139050496');
+    let logchannel = bot.channels.cache.get('740417504601571349');
 
         if(!member)
             return message.channel.send({embed: {title: "Error⚠️", description:"Please mention a valid member of this server", color:'#f83e42'}});
@@ -24,6 +24,6 @@ module.exports = {
         member.ban({reason: reason})
             .catch(error => message.channel.send({embed: {title: "Error⚠️", description: 'I could not seem to ban that user.', color:'#f83e42'}}));
         message.channel.send({embed: {title: "Success!", description:`${member.user.tag} has been banned by ${message.author.tag} for: ${reason}`, color:'#42f12c'}});
-        logchannel.send({embed: {title: "New Ban Log", description:`${message.author.tag} has banned ${member.user.tag} from the guild.`, color:'BLUE'}});
+        logchannel.send({embed: {title: "New Ban Log", description:`${message.author.tag} has banned ${member.user.tag} from the guild for: ${reason}.`, color:'BLUE'}});
   }
 };
