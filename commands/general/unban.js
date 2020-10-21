@@ -10,7 +10,7 @@ module.exports = {
   guildOnly: true,
   reqPermissions: ['BAN_MEMBERS'],
   execute(bot, message, args) {
-      let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || bans.find(b => b.user.id == userID);  
+      let member = message.mentions.members.first() || message.guild.members.cache.get(args[0])
       let reason = args.slice(1).join(' ' + ` - Responsible Mod: ${message.author.tag}`);
       let userID = args[0]
           message.guild.fetchBans().then(bans=> {
@@ -18,7 +18,7 @@ module.exports = {
          if(!reason) reason = `No reason provided. - Responsible Mod: ${message.author.tag}`;
       let bUser = bans.find(b => b.user.id == userID)
          if(!bUser) return message.channel.send({embed: {title: "Error⚠️", description: "Please provide a user to unban.", color: '#f5ce42'}});
-          message.guild.members.unban(bUser.user)({reason: reason})
+          message.guild.members.unban(bUser.user{reason: reason})
           message.channel.send({embed: {title: "Success!", description: `I have successfully unbanned ${member.user.tag} for: ${reason}`, color: '#42f12c'}});
 })
   }
