@@ -26,7 +26,7 @@ module.exports = {
         message.channel.send({embed: {title: "Success!", description:`${member.user.tag} has been banned by ${message.author.tag} for: ${reason}`, color:'#42f12c'}});
    let banlogembed = new Discord.MessageEmbed()
            .setTitle('New Ban Log')
-           .setDescription(`${message.author.tag} has banned ${member.user.tag} from the guild. /nReason: ${reason}`)   
+           .setDescription(`${message.author.tag} has banned ${member.user.tag} from the guild. \nReason: ${reason}`)   
            .setColor('BLUE')
            .setTimestamp()
     logchannel.send(banlogembed)
