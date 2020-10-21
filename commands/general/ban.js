@@ -24,6 +24,11 @@ module.exports = {
         member.ban({reason: reason})
             .catch(error => message.channel.send({embed: {title: "Error⚠️", description: 'I could not seem to ban that user.', color:'#f83e42'}}));
         message.channel.send({embed: {title: "Success!", description:`${member.user.tag} has been banned by ${message.author.tag} for: ${reason}`, color:'#42f12c'}});
-        logchannel.send({embed: {title: "New Ban Log", description:`${message.author.tag} has banned ${member.user.tag} from the guild for: ${reason}.`, color:'BLUE'}});
+   let banlogembed = new Discord.MessageEmbed()
+           .setTitle('New Ban Log')
+           .setDescription(`${message.author.tag} has banned ${member.user.tag} from the guild. /nReason: ${reason}`)   
+           .setColor('BLUE')
+           .setTimestamp()
+    logchannel.send(banlogembed)
   }
 };
