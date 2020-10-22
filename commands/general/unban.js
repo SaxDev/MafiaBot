@@ -11,11 +11,14 @@ module.exports = {
   reqPermissions: ['BAN_MEMBERS'],
   execute(bot, message, args) {
     let userID = args[0]
-      msg.guild.fetchBans().then(bans=> {
+    let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
+    let reason = args.slice(1).join(' ' + ` - Responsible Mod: ${message.author.tag}`);
+       message.guild.fetchBans().then(bans=> {
       if(bans.size == 0) return 
-      let bUser = bans.find(b => b.user.id == userID)
+    let bUser = bans.find(b => b.user.id == userID)
       if(!bUser) return
-      msg.guild.members.unban(bUser.user)
+       message.guild.members.unban(bUser.user)
+       message.channel.send({embed: {title: "Success!", description:`${member.user.tag} has been un-banned by ${message.author.tag} for: ${reason}`, color:'#42f12c'}});
 })
   }
 };
