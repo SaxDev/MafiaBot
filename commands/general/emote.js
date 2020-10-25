@@ -16,7 +16,7 @@ module.exports = {
         return;
     }
     else if (/^\d+$/.test(message.args[0])){
-        let r = await require('node-fetch')(`${bot.options.http.cdn}/emojis/${message.args[0]}`);
+        let r = require('node-fetch')(`${bot.options.http.cdn}/emojis/${message.args[0]}`);
         if (r.status == 200){
             message.channel.send(`Emote link: ${client.options.http.cdn}/emojis/${message.args[0]}.png\nAnimated emote link: ${bot.options.http.cdn}/emojis/${message.args[0]}.gif`);
             return;
