@@ -41,6 +41,5 @@ const responses = [
       .setFooter("Requested by " + message.author.tag, message.author.avatarURL())
       .setColor("ORANGE")
     message.channel.send(eightballEmbed);
-  });
   }
 };
