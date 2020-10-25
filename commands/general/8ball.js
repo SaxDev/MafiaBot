@@ -35,9 +35,9 @@ const responses = [
   const question = args.join(" ");
   let answer = responses[Math.floor(Math.random() * responses.length)];
   const eightballEmbed = new Discord.MessageEmbed()
-      .setTitle(`:8ball:8Ball:8ball`)
-      .addField("Question:",'${question}')
-      .addField("8Ball Answer:",'${answer}')
+      .setTitle(`:8ball:8Ball:8ball:`)
+      .addField("Question:",`${question}`)
+      .addField("8Ball Answer:",`${answer}`)
       .setFooter("Requested by " + message.author.tag, message.author.avatarURL())
       .setColor("ORANGE")
     message.channel.send(eightballEmbed);
