@@ -40,15 +40,15 @@ const responses = [
 'nigrah','nigruh','chinki','chinky','Spic','spick','spik','spig','dike','spigotty','whitey','nazi','Wigger','Wigga','wegro','nikker','nicker','icker','nikker','nikka','nibbah','nibba','nicka',
 'jews','jews','f a g g o t','f a g','queer','q u e e r','qu e e r','quee r','q u e er','quee er','quee e r','qu ee r','quee r','q ueer','queer','q ueer','q uee r','rape','rapist','molest','molester',
 'molestar','nibb','fagot','faget','kys','kill your self','k y s']
-  const question = args.join(" ");
-  let answer = responses[Math.floor(Math.random() * responses.length)];
   let bad = false
+  let answer = responses[Math.floor(Math.random() * responses.length)];
     filter.forEach(word => {
-      if (answer.includes(word)) bad = true
+      if (message.content.includes(word)) bad = true
     })
     if (bad) return message.channel.send(":x: | You can't use a blacklisted word in your question.")
-    if (!args[0]) return message.channel.send(":x: | You need a question to ask the magic 8ball!.")    
-  const eightballEmbed = new Discord.MessageEmbed()
+    if (!args[0]) return message.channel.send(":x: | You need a question to ask the magic 8ball!.");    
+  const question = args.join(" ");
+  let eightballEmbed = new Discord.MessageEmbed()
       .setTitle(`:8ball:8Ball:8ball:`)
       .addField("Question:",`${question}`)
       .addField("8Ball Answer:",`${answer}`)
