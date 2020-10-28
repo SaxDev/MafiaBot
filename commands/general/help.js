@@ -10,7 +10,7 @@ module.exports = {
   category: "General",
   description: "Shows the list of commands.",
   aliases: ["commands"],
-  examples: "gn!help embed\ngn!commands",
+  examples: "!help embed\ngn!commands",
   usage: "[command name]",
   cooldown: 5,
   execute(bot, message, args) {
@@ -39,7 +39,7 @@ module.exports = {
 
         const categoryName = category.charAt(0).toUpperCase() + category.slice(1);
 
-        helpEmbed.addField(`${categoryName}`, helpList.join(", "));
+        helpEmbed.addField(categoryName, helpList.join(", "));
       });
 
       if (misc.length < 0) {
@@ -76,7 +76,7 @@ module.exports = {
       if (command.dmOnly) helpEmbed.addField("**DM Only**", "Command only can be executed in DMs.");
       if (command.dev) helpEmbed.addField("**Dev**", "Only Bot Developers can execute this command.");
       if (command.voted) helpEmbed.addField("**Voted**", "You have to vote for the bot to use this command.")
-      if (command.cooldown) helpEmbed.addField("**Cooldown**", `${command.cooldown} seconds`);
+      if (command.cooldown) helpEmbed.addField("**Cooldown**", command.cooldown + " second(s)");
       message.channel.send(helpEmbed)
     }
   }
