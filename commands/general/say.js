@@ -3,8 +3,8 @@ const Discord = require("discord.js");
 module.exports = {
   name: "say",
   category: "General",
-  description: "Make the bot say your favourite quotes.",
-  usage: "[channel(optional)] [quote]",
+  description: "Make the bot say your favourite quotes. If you don't add a channel, it'll send the quote in the channel the message was sent in",
+  usage: "[channel] <quote>",
   cooldown: 5,
   reqPermissions: ["KICK_MEMBERS"],
   execute(bot, message, args) {
