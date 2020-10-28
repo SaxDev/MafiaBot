@@ -3,8 +3,7 @@ const Discord = require("discord.js");
 module.exports = {
   name: "serverinfo",
   category: "General",
-  description: "Get information about a guild.",
-  usage: "[user] <reason>",
+  description: "Get information about the server.",
   cooldown: 5,
   execute(bot, message, args) {
       function checkBots(guild) {
