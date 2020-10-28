@@ -10,7 +10,7 @@ module.exports = {
   category: "General",
   description: "Shows the list of commands.",
   aliases: ["commands"],
-  examples: "gn!help embed\ngn!commands",
+  examples: "!help embed\ngn!commands",
   usage: "[command name]",
   cooldown: 5,
   execute(bot, message, args) {

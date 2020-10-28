@@ -9,9 +9,10 @@ module.exports = {
   name: 'eval',
   category: 'Dev',
   description: 'Executes a command.',
-  aliases: ['eveal', 'execute'],
+  aliases: ['eveal','execute'],
   usage: '<code>',
-  dev: 'true',
+  unstaged: true,
+  dev: true,
   async execute(bot, message, args) {
 
     const msg = await message.channel.send(`Executing code...`);

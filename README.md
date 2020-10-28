@@ -1,2 +1,2 @@
-# MafiaBot
-Mafia is a Discord bot game that is inspired by the party game "Mafia" game.
+# ModMail Assistant
+Utility bot for StudGang's ModMail bot

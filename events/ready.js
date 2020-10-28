@@ -1,14 +1,18 @@
 module.exports = async (client) => {
-
   //Client User activity
   client.user.setStatus("online");
-  client.user.setActivity("the Mafia whispers...", { type: "LISTENING" });
+  client.user.setActivity("ModMail Threads!", { type: "WATCHING" });
 
   //Client info
-  console.log(`Discord - Bot is ready.
-  Client User: ${client.user.tag}
-  Guild Count: ${client.guilds.cache.size}
-  User Count: ${client.users.cache.size}`);
+const response1 = 'ModMail Assistant is online, listening to port 42069'
+const response2 = 'ight daddy, I am ready :smirk_cat:'
+const response = [
+  response1,
+  response2
+                 ]
+  var pick = Math.floor(Math.random() * response.length);
+   console.log(response[pick]);
 
   client.ready = true;
+
 };
