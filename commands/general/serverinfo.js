@@ -7,7 +7,6 @@ module.exports = {
   usage: "[user] <reason>",
   aliases: "si",
   cooldown: 5,
-  guildOnly: true,
   reqPermissions: ['BAN_MEMBERS'],
   execute(bot, message, args) {
       function checkBots(guild) {
