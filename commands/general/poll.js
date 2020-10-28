@@ -4,7 +4,7 @@ module.exports = {
   category: "General",
   description: "Vote on whatever you'd like!",
   aliases: ["vote"],
-  usage: "[context]",
+  usage: "<context>",
   cooldown: 5,
   reqPermissions: ['KICK_MEMBERS'],
   execute(bot, message, args) {
