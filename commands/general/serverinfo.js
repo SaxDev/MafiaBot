@@ -5,9 +5,7 @@ module.exports = {
   category: "General",
   description: "Get information about a guild.",
   usage: "[user] <reason>",
-  aliases: "si",
   cooldown: 5,
-  reqPermissions: ['BAN_MEMBERS'],
   execute(bot, message, args) {
       function checkBots(guild) {
         let botCount = 0;
