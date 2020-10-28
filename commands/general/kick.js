@@ -4,7 +4,7 @@ module.exports = {
   name: "kick",
   category: "General",
   description: "Kick a user from the server!",
-  usage: "[user] <reason>",
+  usage: "<user> [reason]",
   cooldown: 5,
   reqPermissions: ['KICK_MEMBERS'],
   execute(bot, message, args) {
