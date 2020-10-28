@@ -4,7 +4,7 @@ module.exports = {
   name: "unban",
   category: "General",
   description: "Unban a user from the server!",
-  usage: "[user] <reason>",
+  usage: "<user> [reason]",
   aliases: ["un-ban","pardon","unbean","un-bean"],
   cooldown: 5,
   reqPermissions: ['BAN_MEMBERS'],
