@@ -5,7 +5,7 @@ module.exports = {
   category: "General",
   description: "Send a Direct Message to a member of the server through the bot!",
   aliases: ["dm","direct-message"],
-  usage: "[member id/mention] [title] | [description] | [color]",
+  usage: "<member id/mention> <title> | [description] | <color>",
   cooldown: 5,
   reqPermissions: ['MANAGE_GUILD'],
   execute(bot, message, args) {
