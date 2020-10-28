@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports = {
   name: "embed",
   category: "General",
-  description: "Make an embed with the bot and send it in any channel! (The '|' is required!)",
+  description: "Make an embed with the bot and send it in any channel! (The | is required between each value!)",
   aliases: ["sendembed","send-embed"],
   usage: "[channel] | [title] | [description] | [color]",
   cooldown: 5,
