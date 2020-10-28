@@ -4,9 +4,9 @@ module.exports = {
   name: "purge",
   category: "General",
   description: "Purge up to 100 messages with the bot.",
-  usage: "[count]",
+  aliases: ["prune"],
+  usage: "<count>",
   cooldown: 5,
-  guildOnly: true,
   reqPermissions: ['MANAGE_MESSAGES'],
   execute(bot, message, args) {
       if (!message.guild.me.hasPermission(["MANAGE_MESSAGES"])) return message.channel.send({embed: {title: "Error ⚠️", description:"I do not have the required permissions!", color: '#f83e42'}}).then(msg => msg.delete(5000))
