@@ -7,7 +7,6 @@ module.exports = {
   usage: "[user] <reason>",
   aliases: ["un-ban","pardon","unbean","un-bean"],
   cooldown: 5,
-  guildOnly: true,
   reqPermissions: ['BAN_MEMBERS'],
   execute(bot, message, args) {
     let userID = args[0]
