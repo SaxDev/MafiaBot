@@ -3,11 +3,9 @@ const Discord = require("discord.js");
 module.exports = {
   name: "kick",
   category: "General",
-  description: "Ban someone from the guild!",
-  aliases: ["yeet"],
-  usage: "[member id/mention] [reason]",
+  description: "Kick a user from the server!",
+  usage: "[user] <reason>",
   cooldown: 5,
-  guildOnly: true,
   reqPermissions: ['KICK_MEMBERS'],
   execute(bot, message, args) {
 
