@@ -1,12 +1,12 @@
 const Discord = require("discord.js");
 
 module.exports = {
-  name: "sendembed",
+  name: "embed",
   category: "General",
-  description: "Sends a message with a fancy embed.",
+  description: "Make an embed with the bot and send it in any channel! (The '|' is required!)",
+  aliases: ["sendembed","send-embed"],
   usage: "[channel] | [title] | [description] | [color]",
   cooldown: 5,
-  guildOnly: true,
   reqPermissions: ['MANAGE_GUILD'],
   execute(bot, message, args) {
     if (!args[0]) return message.channel.send({embed: {title: "Error ⚠️", description:'You have to mention the channel to send the embed..', color: '#f83e42'}});
