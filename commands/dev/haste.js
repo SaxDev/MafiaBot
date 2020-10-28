@@ -8,7 +8,8 @@ module.exports = {
   description: "Uploads stuff to Hastebin. DEV ONLY.",
   aliases: ["up","haste"],
   usage: "[text]",
-  dev: "true",
+  unstaged: true,
+  dev: true,
   async execute(bot, message, args) {
      const msg = await message.channel.send(`Uploading to Hastebin...`);
           if (!args[0]) return message.channel.send(":x: | You need to provide text for it to be uploaded to Hastebin.");
