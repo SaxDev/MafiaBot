@@ -2,9 +2,11 @@ const Discord = require("discord.js");
 module.exports = {
   name: "poll",
   category: "General",
-  description: "Set a poll for everyone to vote on something!",
+  description: "Vote on whatever you'd like!",
   aliases: ["vote"],
+  usage: "[context]",
   cooldown: 5,
+  reqPermissions: ['KICK_MEMBERS'],
   execute(bot, message, args) {
 
   const question = args.join(" ");
