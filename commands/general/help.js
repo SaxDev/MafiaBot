@@ -39,7 +39,7 @@ module.exports = {
 
         const categoryName = category.charAt(0).toUpperCase() + category.slice(1);
 
-        helpEmbed.addField(categoryName, helpList.join(", "));
+        helpEmbed.addField(`${categoryName}`, helpList.join(", "));
       });
 
       if (misc.length < 0) {
