@@ -5,8 +5,8 @@ module.exports = {
   category: "Dev",
   description: "Reloads a command.",
   usage: "<command name>",
-  example: `!reload help`,
   dev: true,
+  unstaged: true,
   execute(bot, message, args) {
     if (!args[0]) return message.channel.send({embed: {title: "Error ⚠️", description:`Missing arguments. \n-Usage: \`${message.prefix}${this.name} ${this.usage}\``, color: '#f83e42'}});
     let commandName = args[0].toLowerCase()
