@@ -3,11 +3,10 @@ const Discord = require("discord.js");
 module.exports = {
   name: "directmessage",
   category: "General",
-  description: "Direct messages a member with a fancy embed.",
-  aliases: ["dm"],
+  description: "Send a Direct Message to a member of the server through the bot!",
+  aliases: ["dm","direct-message"],
   usage: "[member id/mention] [title] | [description] | [color]",
   cooldown: 5,
-  guildOnly: true,
   reqPermissions: ['MANAGE_GUILD'],
   execute(bot, message, args) {
     if (!args[0]) return message.channel.send({embed: {title: "Error ⚠️", description:'You have to mention or provide a id to direct message a user.', color: '#f83e42'}});
