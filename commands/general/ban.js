@@ -3,11 +3,10 @@ const Discord = require("discord.js");
 module.exports = {
   name: "ban",
   category: "General",
-  description: "Ban users from the server!",
-  usage: "[user] <reason>",
-  aliases: "bean",
+  description: "Ban a user from the server!",
+  aliases: ["bean"],
+  usage: "<user> [reason]",
   cooldown: 5,
-  guildOnly: true,
   reqPermissions: ['BAN_MEMBERS'],
   execute(bot, message, args) {
     let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
